@@ -20,7 +20,7 @@ public class IncrementTask implements Runnable {
         try {
             while (true) {
                 System.out.println(Thread.currentThread());
-                Path path = Paths.get("out.txt");
+                Path path = Paths.get("target","out.txt");
                 Integer counter = 0;
                 simpleFileLock.lock();
                 try {

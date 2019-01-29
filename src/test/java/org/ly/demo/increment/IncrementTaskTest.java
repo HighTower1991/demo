@@ -21,7 +21,7 @@ public class IncrementTaskTest {
      */
     @Test
     public void runTasksTest() throws Exception{
-        Path path = Paths.get("out.txt");
+        Path path = Paths.get("target","out.txt");
         Files.write(path, "0".getBytes(), StandardOpenOption.CREATE);
         Integer limit = 50;
         IncrementTask incrementTask = new IncrementTask(limit);
