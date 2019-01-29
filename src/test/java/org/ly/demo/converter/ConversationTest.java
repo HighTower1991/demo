@@ -3,9 +3,6 @@ package org.ly.demo.converter;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
 
@@ -17,10 +14,10 @@ public class ConversationTest {
     @Test
     public void whenCorrectStringThenCreateConversationInstance() {
         Conversation simpleConversation = Conversation.of("10.01 кг = 100 л");
-        assertEquals(new BigDecimal("10.01"), simpleConversation.a);
-        assertEquals("кг", simpleConversation.v);
-        assertEquals(new BigDecimal("100"), simpleConversation.b);
-        assertEquals("л", simpleConversation.w);
+        assertEquals(new BigDecimal("10.01"), simpleConversation.getLeftOperand().amount);
+        assertEquals("кг", simpleConversation.getLeftOperand().name);
+        assertEquals(new BigDecimal("100"), simpleConversation.getRightOperand().amount);
+        assertEquals("л", simpleConversation.getRightOperand().name);
     }
 
 }
